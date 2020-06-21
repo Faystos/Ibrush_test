@@ -59,8 +59,14 @@ const gulpServer = () => {
     ui: false
   });
 
-  gulp.watch("src/less/**/*.less", gulp.series(css));
+  gulp.watch("src/less/**/*.less", gulp.series(css, refresh));
   gulp.watch("src/*.html", gulp.series(minify, refresh));
+  gulp.watch([
+    "src/fonts/**/*.{woff,woff2,ttf}",
+    "src/img/**",
+    "src/js/**",
+    "src/*.ico"
+  ], gulp.series(copys, refresh));
 } 
 
 const build = gulp.series(

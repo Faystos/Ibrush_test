@@ -38,7 +38,6 @@
     }
   }
 
-
   .block_books__block_info {
     margin: 33px 0px 0 -1px;
 
@@ -54,7 +53,23 @@
       font-family: "Segoe UI Italic";
       font-size: 14px;
       line-height: 1.43;
-      margin: 22px 0px 0 54px;      
+      margin: 22px 0px 0 54px;  
+      
+      .block_parag__parag_author {
+        color: #777777;
+        margin: 20px 0 0 17px;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 13px;
+          height: 1px;
+          background: #000000;
+          position: absolute;
+          top: 11px;
+          left: -17px;
+        }
+      }
       
     }
   }

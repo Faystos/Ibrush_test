@@ -12,5 +12,25 @@
     font-size: 24px;   
     color: #0062ff;
     line-height: 2;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 21px;
+      height: 1px;
+      opacity: 0.2;
+      background-color: #454a52;
+      position: absolute;
+      top: 25px;
+    }
+
+    &::after {      
+      left: 0;
+    }
+
+    &::before {
+      right: 0;
+    }
   }
 }
