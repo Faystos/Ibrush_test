@@ -41,7 +41,7 @@ const clean = () => {
 
 const copys = () => {
   return gulp.src([
-    "src/fonts/**/*.{woff,woff2}",
+    "src/fonts/**/*.{woff,woff2,ttf}",
     "src/img/**",
     "src/js/**",
     "src/*.ico"
