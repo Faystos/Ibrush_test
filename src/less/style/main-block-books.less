@@ -17,6 +17,32 @@
 
   .block_books__block_img {
     margin: 25px 0 0 0;
+    width: 738px;
+    overflow: hidden;
+    position: relative;
+
+    .block_img__block_data {
+      font-family: "Merriweather";
+      line-height: 1.3;
+      text-align: center;
+      color: #202326;
+      width: 120px;
+      height: 100px;
+      padding: 19px 20px 5px 19px;
+      border: solid 1px #ffffff;
+      background: rgba(255, 255, 255, .7);
+      position: absolute;
+      top: 13px;
+      left: 20px;
+
+      .block_data__number {
+        font-size: 24px;        
+      }      
+    }    
+
+    .block_img__img {
+      margin: 0 0 0 0;      
+    }
   }
 
   .block_books__block_runner {
@@ -53,7 +79,18 @@
       font-family: "Segoe UI Italic";
       font-size: 14px;
       line-height: 1.43;
-      margin: 22px 0px 0 54px;  
+      margin: 22px 0px 0 54px; 
+      position: relative;
+      
+      &::before {
+        content: "";
+        width: 34px;
+        height: 34px;
+        background: url("../../img/quotation-mobile.jpg");
+        position: absolute;
+        top: -5px;
+        left: -54px;
+      }
       
       .block_parag__parag_author {
         color: #777777;
@@ -69,8 +106,7 @@
           top: 11px;
           left: -17px;
         }
-      }
-      
+      }      
     }
   }
 }
