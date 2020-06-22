@@ -1,0 +1,158 @@
+.main__block_comment {
+  width: 100%;
+  background: #ededed;
+  margin: 37px 0 0 0;
+
+  .block_comment__wrap {
+    padding: 0 20px;
+  }
+
+  .block_comment__block_title {
+    padding-top: 36px;
+
+    .block_title__title {
+      font-family: "Consolas Bold";
+      line-height: 1.13;
+    }
+    
+  }
+
+  .block_comment__block_stars {
+    display: flex;    
+    align-items: center;
+    justify-self: start;
+    margin: 13px 0 0 -5px;
+
+    .block_stars__star {
+      width: 24px;
+      height: 23px;
+      background: #ffb400;
+      margin: 0 5px;
+    }
+  }
+
+  .block_comment__block_form {
+    margin: 21px 0 0 0;
+
+    .block_form__title {
+      font-family: "Consolas Bold";
+      line-height: 1.13;  
+    }
+
+    // Блок с формой
+    .block_form__form {
+      margin: 17px 0 0 0;
+
+      //Блок с инпутами name и mail
+      .form__block_inp {
+        font-family: Arial;
+        font-size: 14px;
+        line-height: 1.71;
+
+        // инпуты name и mail
+        .block_inp {
+          margin-bottom: 14px;
+          position: relative;
+
+          .block_inp__inp,
+          .block_inp__sel,
+          .block_inp__coment {
+            width: 280px;
+            height: 44px;
+            border-radius: 4px;
+            border: solid 1px #e6e6e6;
+            background-color: #ffffff;
+            outline: none; 
+            padding: 14px 5px 1px 19px;  
+            
+            &:focus {
+              background-color: #ffffff;
+            }
+          }
+
+          .block_inp__lbl {
+            color: #777777;
+            position: absolute;
+            top: 11px;
+            left: 19px;
+            transition: top .5s;
+          }
+
+          // блок с кастомным селектом          
+          .block_inp__sel {
+            padding: 11px 43px 5px 19px;
+            color: #777777;
+            position: relative;
+
+            &::before {
+              content: "";
+              width: 7px;
+              height: 7px;
+              position: absolute;
+              border-bottom: 1px solid #818181;
+              border-right: 1px solid #818181;
+              top: 15px;
+              right: 20px;
+              transition: transform .5s
+            }
+
+            &--close {
+              &::before {                
+                transform: rotate(45deg);                            
+              }
+            }
+
+            &--open {
+              &::before {
+                transform: rotate(-135deg);
+              }
+            }                     
+          }           
+        }        
+      }
+
+
+      // Блок с импутом textarea
+      .form__block__block_coment {
+        font-family: Arial;
+        font-size: 14px;
+        line-height: 1.71;
+        color: #777777;
+        position: relative;
+
+        .block_coment__coment {
+          width: 280px;
+          height: 120px;
+          border-radius: 4px;
+          border: solid 1px #e6e6e6;
+          padding: 20px 5px 5px 19px;
+          resize:none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .block_coment__lbl {
+          position: absolute;
+          top: 11px;
+          left: 19px;
+          transition: top .5s;
+        }
+      }
+
+      
+      
+
+      // Анимация плайсхолдеров.
+      .block_inp__inp:focus + .block_inp__lbl,
+      .block_inp__inp:not(:placeholder-shown) + .block_inp__lbl,
+      .block_coment__coment:focus + .block_coment__lbl,
+      .block_coment__coment:not(:placeholder-shown) + .block_coment__lbl {
+        top: 4px;                  
+      }
+    }
+  }
+}
+
+
