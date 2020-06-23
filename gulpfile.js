@@ -41,7 +41,7 @@ const clean = () => {
 
 const copys = () => {
   return gulp.src([
-    "src/fonts/**/*.{woff,woff2,ttf}",
+    "src/fonts/**",
     "src/img/**",
     "src/js/**",
     "src/*.ico"
@@ -62,20 +62,18 @@ const gulpServer = () => {
   gulp.watch("src/less/**/*.less", gulp.series(css, refresh));
   gulp.watch("src/*.html", gulp.series(minify, refresh));
   gulp.watch([
-    "src/fonts/**/*.{woff,woff2,ttf}",
-    "src/img/**",
-    "src/js/**",
+    "src/fonts/**/*",
+    "src/img/**/*",
+    "src/js/**/*",
     "src/*.ico"
   ], gulp.series(copys, refresh));
 } 
 
-const build = gulp.series(
-  gulp.parallel(
+const build = gulp.series(  
     clean,
     copys,
     css,
-    minify
-  )
+    minify  
 );
 
 const start = gulp.series(build, gulpServer);
