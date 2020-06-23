@@ -4,11 +4,10 @@
   margin: 37px 0 0 0;
 
   .block_comment__wrap {
-    padding: 0 20px;
+    padding: 36px 20px 38px 20px;
   }
 
-  .block_comment__block_title {
-    padding-top: 36px;
+  .block_comment__block_title {    
 
     .block_title__title {
       font-family: "Consolas Bold";
@@ -17,17 +16,18 @@
     
   }
 
+  // Блок со звездами.
   .block_comment__block_stars {
     display: flex;    
     align-items: center;
     justify-self: start;
-    margin: 13px 0 0 -5px;
+    margin: 12px 0 0 -1px;
 
     .block_stars__star {
-      width: 24px;
-      height: 23px;
-      background: #ffb400;
-      margin: 0 5px;
+      height: 24px; 
+      width: 23px;      
+      margin: 0 11px 0 0;
+      cursor: pointer;
     }
   }
 
@@ -37,7 +37,7 @@
     .block_form__title {
       font-family: "Consolas Bold";
       line-height: 1.13;  
-    }
+    }    
 
     // Блок с формой
     .block_form__form {
@@ -83,6 +83,7 @@
             padding: 11px 43px 5px 19px;
             color: #777777;
             position: relative;
+            cursor: pointer;
 
             &::before {
               content: "";
@@ -139,6 +140,19 @@
           left: 19px;
           transition: top .5s;
         }
+      }
+
+      // Кнопка отправить
+      .form__btn {
+        width: 280px;
+        min-height: 44px;
+        background: #0062ff;
+        border-radius: 4px;
+        font-family: "Consolas Bold";
+        font-size: 18px;
+        color: #ffffff;
+        margin: 9px 0 0 -1px;
+        padding: 5px 5px 9px 5px;
       }
 
       
