@@ -1,9 +1,10 @@
-.main__block_comment {
-  width: 100%;
+.main__block_comment { 
   background: #ededed;
   margin: 37px 0 0 0;
 
   .block_comment__wrap {
+    width: 320px;
+    margin: 0 auto;
     padding: 36px 20px 38px 20px;
   }
 
@@ -16,7 +17,7 @@
   }  
 
   .block_comment__block_form {
-    margin: 22px 0 0 0;
+    margin: 22px 0 0 -1px;
 
     .block_form__title {
       font-family: "Consolas Bold";
@@ -106,7 +107,7 @@
 
         .block_coment__coment {
           width: 280px;
-          height: 120px;
+          height: 121px;
           border-radius: 4px;
           border: solid 1px #e6e6e6;
           padding: 20px 5px 5px 19px;
@@ -120,7 +121,7 @@
         .block_coment__lbl {
           position: absolute;
           top: 11px;
-          left: 19px;
+          left: 20px;
           transition: top .5s;
         }
       }
@@ -132,18 +133,18 @@
         background: #0062ff;
         border-radius: 4px;
         font-family: "Consolas Bold";
-        font-size: 18px;
+        font-size: 18px;       
         color: #ffffff;
-        margin: 9px 0 0 -1px;
-        padding: 5px 5px 9px 5px;
+        margin: 8px 0 0 0;
+        padding: 5px 5px 10px 5px;
       }
 
-      // Анимация плайсхолдеров.
+      // Анимация placeholders.
       .block_inp__inp:focus + .block_inp__lbl,
       .block_inp__inp:not(:placeholder-shown) + .block_inp__lbl,
       .block_coment__coment:focus + .block_coment__lbl,
       .block_coment__coment:not(:placeholder-shown) + .block_coment__lbl {
-        top: 4px;
+        top: 3px;
       }
     }
   }
