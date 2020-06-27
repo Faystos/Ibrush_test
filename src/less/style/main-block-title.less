@@ -1,11 +1,28 @@
 .main__block_title {
   width: 100%;
-  margin: 26px 0 0 0;
 
-  .block_title__wrap {
-    padding: 0 20px;
-    width: 320px;
+  @media (min-width: 320px) {
+    margin: 26px 0 0 0;
+  }
+
+  @media (min-width: 768px) {
+    margin: 73px 0 0 0;
+  }
+  
+
+  .block_title__wrap {    
     margin: 0 auto;
+
+    @media (min-width: 320px) {
+      width: 320px;
+      padding: 0 20px;      
+    }
+
+    @media (min-width: 768px) {
+      width: 768px;
+      padding: 0 15px;
+    }
+    
   }
 
   .block_title__title {
@@ -13,19 +30,36 @@
     text-align: center;
     font-family: "Consolas Bold";
     font-size: 24px;   
-    color: #0062ff;
-    line-height: 2;
+    color: #0062ff;   
     position: relative;
+
+    @media (min-width: 320px) {
+      font-size: 24px; 
+      line-height: 2;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      line-height: 1;
+    }
+    
 
     &::after,
     &::before {
-      content: "";
-      width: 21px;
+      content: "";      
       height: 1px;
       opacity: 0.2;
       background-color: #454a52;
       position: absolute;
       top: 25px;
+
+      @media (min-width: 320px) {
+        width: 21px;
+      }
+
+      @media (min-width: 768px) {
+        width: 144px;
+      }
     }
 
     &::after {      
