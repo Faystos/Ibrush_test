@@ -3,28 +3,51 @@
   margin: 31px 0 0 0;
   
   .block_books__wrap {
-    width: 320px;
     margin: 0 auto;
-    padding: 0 20px;
-    overflow: hidden;
 
-  }
+    @media (min-width: 320px) {
+      width: 320px;    
+      padding: 0 20px;
+      overflow: hidden;
+    }
 
-  .block_books__block_parag {
-    width: 257px;
-    font-family: Arial;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.29;
-    color: #202326;
-    margin: 0;
-  }
+    @media (min-width: 768px) {
+      width: 768px;    
+      padding: 0 15px;
+    }
+  } 
 
   .block_books__block_img {
-    margin: 25px 0 0 -1px;
+    margin: 0 0 0 -1px;
     width: 738px;
     overflow: hidden;
     position: relative;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column-reverse;
+      margin: 39px 0 0 0;
+    }
+
+    .block_img__block_parag {
+      font-family: Arial;
+      font-style: italic;
+      color: #202326;
+
+      @media (min-width: 320px) {
+        width: 257px;     
+        font-size: 14px;
+        line-height: 1.29;     
+        margin: 0 0 25px 0;
+      }
+
+      @media (min-width: 768px) {
+        width: 471px;
+        height: 20px;
+        overflow: hidden;
+        margin: 16px 0 0 0;        
+      }      
+    }
 
     .block_img__block_data {
       font-family: "Merriweather";
@@ -37,7 +60,7 @@
       border: solid 1px #ffffff;
       background: rgba(255, 255, 255, .7);
       position: absolute;
-      top: 13px;
+      top: 92px;
       left: 20px;
 
       .block_data__number {
@@ -51,7 +74,12 @@
   }
 
   .block_books__block_runner {
-    margin: 10px 0 0 -1px;
+    @media (min-width: 320px) {
+      margin: 10px 0 0 -1px;
+    }
+    @media (min-width: 768px) {
+      display: none;
+    }
 
     .block_runner {
       width: 100%;
