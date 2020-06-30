@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +8,13 @@
 </head>
 <body>
   <main class="main">
-    <div class="main__block_title">
+    <section class="main__block_title">
       <div class="block_title__wrap">
         <h1 class="block_title__title">Путь JavaScript</h1>
       </div>
-    </div>
-
+    </section>
     <section class="main__block_books">
-      <div class="block_books__wrap">
-        <!-- <div class="block_books__block_parag">
-          <p class="block_parag__parag">Можно выделить три основных направления для прогресса JavaScript Middleюю</p>         
-        </div> -->
+      <div class="block_books__wrap">       
         <div class="block_books__block_img">
           <div class="block_img__block_parag">
             <p class="block_parag__parag">Можно выделить три основных направления для прогресса JavaScript Middleюю</p>         
@@ -43,19 +39,20 @@
         </div>
       </div>
     </section>
-
     <section class="main__block_commercial">
-      <div class="block_commercial__wrap">
-        <div class="block_commercial__block_text">
-          <span class="block_text__text">Реклама на</span>
-          <a class="block_text__link" href="#">blabla.com</a>
-        </div>
+      <div class="block_commercial__wrap">        
         <div class="block_commercial__block_img">
-          <img class="block_img__img" src="./img/marcet-mobile.jpg" alt="рекламное изображение с книгами" width="280" height="200">
+          <div class="block_img__block_text">
+            <span class="block_text__text">Реклама на</span>
+            <a class="block_text__link" href="#">blabla.com</a>
+          </div>
+          <picture>
+            <source srcset="./img/rec_desc.jpg" media="(min-width: 768px)">           
+            <img class="block_img__img" src="./img/marcet-mobile.jpg" alt="рекламное изображение с книгами">
+          </picture>                
         </div> 
       </div>
     </section>
-
     <section class="main__block_conclusion">
         <div class="block_conclusion__wrap">
           <h3 class="block_conclusion__title">Заключение</h3>
@@ -64,12 +61,13 @@
           </div>
         </div>
     </section>
-
     <section class="main__block_comment">
       <div class="block_comment__wrap">
+
         <div class="block_comment__block_title">
           <h3 class="block_title__title">Оцените статью</h3>
         </div> 
+
         <div class="block_comment__block_stars">
           <input class="block_stars__inp inp_hidden" type="radio" name="estimation" id="estimation_1" value="1">
           <label class="block_stars__star" for="estimation_1"></label>
@@ -82,6 +80,7 @@
           <input class="block_stars__inp inp_hidden" type="radio" name="estimation" id="estimation_5" value="5" >
           <label class="block_stars__star" for="estimation_5"></label>
         </div>
+
         <div class="block_comment__block_form">
           <h3 class="block_form__title">Добавить комментарий к книге</h3>
           <form class="block_form__form" action="">

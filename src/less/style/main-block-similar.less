@@ -1,37 +1,78 @@
-.main__block_similar {  
-  margin: 31px 0 0 -1px;
+.main__block_similar {
+  width: 100%;
+  margin: 31px 0 0 0;
   padding-bottom: 10px;
 
-  .block_similar__wrap {
-    width: 320px;
+  .block_similar__wrap {    
     margin: 0 auto;
-    padding: 0 20px;
+
+    @media (min-width: 320px) {
+      width: 320px;
+      padding: 0 20px;
+    }
+
+    @media (min-width: 768px) {
+      width: 768px;
+      padding: 26px 15px 81px 15px;
+    }
   }
 
   .block_similar__block_title {
-    font-family: "Consolas Bold";
-    font-size: 21px;
-    line-height: 1.71;
+
+    @media (min-width: 320px) {
+      font-family: "Consolas Bold";
+      font-size: 21px;
+      line-height: 1.71;
+    }
+
+    @media (min-width: 768px) {
+      font-family: "Consolas";
+      font-size: 28px;
+      line-height: 0.86;      
+    }
   }
 
   .block_similar__block_slider {
-    margin: 20px 0 0 0;
+    
+    @media (min-width: 320px) {
+      margin: 20px 0 0 0;
+    }
+
+    @media (min-width: 768px) {
+      margin: 37px 0 0 0;
+    }
 
     .block_slider__block_img {
-      width: 280px;
-      height: 280px;
+      
       background: #61dafb;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media (min-width: 320px) {
+        width: 280px;
+        height: 280px;
+      }
+
+      @media (min-width: 768px) {
+        width: 226px;
+        height: 226px;
+      }
     }
 
     .block_slider__block_parag {
       font-family: "Consolas Bold";
       font-size: 18px;
-      line-height: 1.33;
-      width: 238px;
+      line-height: 1.33;     
       margin: 15px 0 0 0;
+
+      @media (min-width: 320px) {
+        width: 238px;
+      }
+
+      @media (min-width: 768px) {
+        width: 179px;
+      }
     }
   }
 
@@ -41,6 +82,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
 
     .block_control__lbl {
       width: 10px;

@@ -1,26 +1,60 @@
 .main__block_conclusion {
-  margin:  30px 0 0 0;
+  width: 100%;
+
+  @media (min-width: 320px) {
+    margin:  30px 0 0 0;
+  }
+
+  @media (min-width: 768px) {
+    margin:  51px 0 0 0;
+  }
 
   .block_conclusion__wrap {
-    width: 320px;
     margin: 0 auto;
-    padding: 0 20px;
+
+    @media (min-width: 320px) {
+      width: 320px;
+      padding: 0 20px;
+    }
+
+    @media (min-width: 768px) {
+      width: 768px;
+      padding: 0 15px 36px 15px;
+    }
   }
 
   .block_conclusion__title {
-    font-family: "Consolas Bold";
-    font-size: 21px;
-    line-height: 1.71;
-    margin: 0 0 0 -1px;
+    @media (min-width: 320px) {
+      font-family: "Consolas Bold";
+      font-size: 21px;
+      line-height: 1.71;
+    }
+
+    @media (min-width: 768px) {
+      font-family: "Consolas";
+      font-size: 28px;
+      line-height: 1.29;
+    }
   }
 
   .block_conclusion__block_parag {
     font-family: Arial;
     font-style: normal;
-    letter-spacing: -0.1px;
-    font-size: 14px;
-    line-height: 1.29;
-    margin: 15px 0 0 0;
-    width: 281px;
+
+    @media (min-width: 320px) {
+      width: 281px;
+      font-size: 14px;
+      line-height: 1.29;
+      letter-spacing: -0.1px;
+      margin: 15px 0 0 0;
+    }
+
+    @media (min-width: 768px) {
+      width: 730px;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 26px 0 0 0;
+      letter-spacing: -0.05px;
+    }
   }
 }

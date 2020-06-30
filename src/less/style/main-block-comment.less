@@ -1,38 +1,63 @@
-.main__block_comment { 
+.main__block_comment {
+  width: 100%;
   background: #ededed;
   margin: 37px 0 0 0;
 
-  .block_comment__wrap {
-    width: 320px;
+  .block_comment__wrap {    
     margin: 0 auto;
-    padding: 36px 20px 38px 20px;
+
+    @media (min-width: 320px) {
+      width: 320px;
+      padding: 36px 20px 38px 20px;
+    }
+
+    @media (min-width: 768px) {
+      width: 768px;
+      padding: 37px 15px 41px 15px;
+    }
   }
 
-  .block_comment__block_title {    
-
-    .block_title__title {
-      font-family: "Consolas Bold";
-      line-height: 1.13;
+  .block_comment__block_title,
+  .block_form__title {
+    font-family: "Consolas Bold";
+    line-height: 1.13;
+    
+    @media (min-width: 768px) {
+      font-size: 18px;
+      line-height: 1;
     }
-  }  
+  }
 
   .block_comment__block_form {
-    margin: 22px 0 0 -1px;
+    margin: 22px 0 0 0;
 
-    .block_form__title {
-      font-family: "Consolas Bold";
-      line-height: 1.13;  
-    }    
+    @media (min-width: 320px) {
+      margin: 22px 0 0 0;
+    }
+
+    @media (min-width: 768px) {
+      margin: 36px 0 0 0;
+    }
 
     // Блок с формой
     .block_form__form {
       margin: 17px 0 0 0;
+
+      @media (min-width: 768px) {
+        margin: 18px 0 0 0;
+      }
 
       //Блок с инпутами name и mail
       .form__block_inp {
         font-family: Arial;
         font-size: 14px;
         line-height: 1.71;
+
+        @media (min-width: 768px) {
+          display: flex;
+          justify-content: space-between;
+        }
+
 
         // инпуты name и mail
         .block_inp {
@@ -42,16 +67,24 @@
           .block_inp__inp,
           .block_inp__sel,
           .block_inp__coment {
-            width: 280px;
             height: 44px;
             border-radius: 4px;
             border: solid 1px #e6e6e6;
             background-color: #ffffff;
-            outline: none; 
-            padding: 14px 5px 1px 19px;  
+            outline: none;
+            
+            @media (min-width: 320px) {
+              width: 280px;
+              padding: 14px 5px 1px 19px;
+            }
+
+            @media (min-width: 768px) {
+              width: 226px;
+              padding: 17px 5px 1px 19px;
+            }
             
             &:focus {
-              background-color: #ffffff;
+              border: solid 1px #222222;
             }
           }
 
@@ -76,25 +109,35 @@
               height: 7px;
               position: absolute;
               border-bottom: 1px solid #818181;
-              border-right: 1px solid #818181;
-              top: 15px;
-              right: 20px;
-              transition: transform .5s
+              border-right: 1px solid #818181;       
+              transition: transform .5s;
+              right: 17px;
+
+              @media (min-width: 320px) {
+                top: 17px;
+              }
+
+              @media (min-width: 768px) {
+                top: 19px;
+              }
             }
 
             &--close {
-              &::before {                
-                transform: rotate(45deg);                            
+              &::before {
+                transform: rotate(45deg);                
               }
             }
 
             &--open {
+              border: solid 1px #222222;
+
               &::before {
                 transform: rotate(-135deg);
+                border-color: #222222;     
               }
-            }                     
-          }           
-        }        
+            }
+          }
+        }
       }
 
       // Блок с импутом textarea
@@ -105,16 +148,25 @@
         color: #777777;
         position: relative;
 
+        @media (min-width: 768px) {
+          margin: 6px 0 0 0;
+        }
+
         .block_coment__coment {
-          width: 280px;
+          width: 100%;
           height: 121px;
           border-radius: 4px;
           border: solid 1px #e6e6e6;
           padding: 20px 5px 5px 19px;
           resize:none;
 
+          @media (min-width: 768px) {
+            height: 100px;
+          }
+
           &:focus {
             outline: none;
+            border: solid 1px #222222;
           }
         }
 
@@ -128,15 +180,25 @@
 
       // Кнопка отправить
       .form__btn {
-        width: 280px;
         min-height: 44px;
         background: #0062ff;
         border-radius: 4px;
         font-family: "Consolas Bold";
         font-size: 18px;       
         color: #ffffff;
-        margin: 8px 0 0 0;
-        padding: 5px 5px 10px 5px;
+        text-transform: uppercase;
+
+        @media (min-width: 320px) {
+          width: 280px;
+          margin: 8px 0 0 0;
+          padding: 5px 5px 10px 5px;
+        }
+
+        @media (min-width: 768px) {
+          width: 226px;
+          margin: 13px 0 0 0;
+          padding: 5px 5px 7px 5px;
+        }
       }
 
       // Анимация placeholders.
