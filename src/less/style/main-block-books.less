@@ -34,7 +34,7 @@
     .block_img__block_parag {
       font-family: Arial;
       font-style: italic;
-      color: #202326;
+      color: #202326;  
 
       @media (min-width: 320px) {
         width: 257px;     
@@ -47,7 +47,18 @@
         width: 471px;
         height: 20px;
         overflow: hidden;
-        margin: 16px 0 0 0;        
+        margin: 16px 0 0 0;  
+        
+        &::before {
+          content: "";
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          background: #ffffff;
+          bottom: 86px;
+          left: 81px;
+          transform: rotate(45deg);
+        }
       }      
     }
 

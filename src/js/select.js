@@ -1,11 +1,41 @@
-const selectInp = document.querySelector('.block_inp__sel');
+'use strict';
 
-selectInp.addEventListener('click', evt => {
-toggleClassSel(evt.target)
+(function () {
+  const selectInp = document.querySelector('.block_inp__sel');
+  const selectBlockOptions = document.querySelector('.block_inp__block_options');
 
-});
+  selectInp.addEventListener('click', evt => {
+    const target = evt.target;
+    getToggleSelect(target);
+  });
 
-function toggleClassSel (target) {
-  target.classList.toggle('block_inp__sel--open');
-  target.classList.toggle('block_inp__sel--close');
-}
+  selectBlockOptions.addEventListener('click', evt => {
+    const target = evt.target;
+    if (!target.classList.contains('block_options__option')) {
+      return
+    }
+    toggleValueSelect(selectInp, target);
+    getToggleSelect(selectInp);
+    
+  });
+
+  function toggleClassSel (target) {
+    target.classList.toggle('block_inp__sel--open');
+    target.classList.toggle('block_inp__sel--close');  
+  }
+
+  function toggleClassOpt () {
+    selectBlockOptions.classList.toggle('block_inp__block_options--close');
+    selectBlockOptions.classList.toggle('block_inp__block_options--active');
+  }
+
+  function toggleValueSelect (target, select) {
+    [select.textContent, target.textContent] = [target.textContent, select.textContent];
+  }
+
+  function getToggleSelect (target) {
+    toggleClassSel(target);
+    toggleClassOpt();
+  }
+})()
+
