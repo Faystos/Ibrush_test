@@ -74,7 +74,6 @@
       background: rgba(255, 255, 255, .7);
       position: absolute;
       left: 20px;
-     
 
       @media (min-width: 320px) {
         top: 92px;           
@@ -97,17 +96,14 @@
       .block_data__number {
         font-size: 24px;        
       }      
-    }    
-
-    .block_img__img {
-      margin: 0 0 0 0;      
     }
   }
 
-  .block_books__block_runner {
+  .block_books__block_runner {    
     @media (min-width: 320px) {
       margin: 13px 0 0 0;
     }
+    
     @media (min-width: 768px) {
       display: none;
     }
@@ -117,6 +113,7 @@
       height: 4px;
       border-radius: 2px;
       background-color: #e6e6e6;
+      position: relative;
 
       .block_runner__runner {
         width: 80px;
@@ -124,6 +121,8 @@
         border-radius: 2px;
         background-color: #0062ff;
         cursor: pointer;
+        position: absolute;
+        left: 0;
       }
     }
   }

@@ -10,6 +10,7 @@ const rename = require("gulp-rename");
 const server = require("browser-sync").create();
 const del = require("del");
 const copy = require("copy");
+const imagemin = require("gulp-imagemin");
 
 const  minify = () => {
   return gulp.src('src/*.html')
@@ -28,6 +29,18 @@ const css = () => {
          .pipe(srcmap.write("."))
          .pipe(gulp.dest('./dist/css'))
          .pipe(server.stream());
+}
+
+const images = () => {
+  return gulp.src("src/img/**/*.{png,jpg,svg}")
+  .pipe(imagemin([
+    imagemin.optipng({
+      optimizationLevel: 3
+    }),
+    imagemin.mozjpeg({quality: 75, progressive: true}),
+    imagemin.svgo()
+  ]))
+  .pipe(gulp.dest("dist/img"));
 }
 
 const refresh = (done) => {
@@ -73,6 +86,7 @@ const build = gulp.series(
     clean,
     copys,
     css,
+    images,
     minify  
 );
 
