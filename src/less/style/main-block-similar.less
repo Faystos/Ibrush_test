@@ -18,7 +18,6 @@
   }
 
   .block_similar__block_title {
-
     @media (min-width: 320px) {
       font-family: "Consolas Bold";
       font-size: 21px;
@@ -40,9 +39,7 @@
 
     @media (min-width: 768px) {
       margin: 37px 0 0 -15px;
-
-      display: flex;
-      // justify-content: space-between;
+      display: flex;      
     }
 
     .block_slider__slider_item {
@@ -59,8 +56,6 @@
         margin: 0 15px;
       }
 
-
-
       .slider_item__block_img {      
         background: #61dafb;
         display: flex;
@@ -70,6 +65,11 @@
         @media (min-width: 320px) {
           width: 280px;
           height: 280px;
+
+          .block_img__img {
+            width: 100%;
+            height: auto;
+          }
         }
   
         @media (min-width: 768px) {
@@ -92,10 +92,7 @@
           width: 179px;
         }
       }
-
-    }
-
-    
+    }    
   }
 
   .block_similar__block_control {
