@@ -1,28 +1,33 @@
 'use strict';
 
-(function () {
-  const arrBlockControlInp = document.querySelectorAll('.block_control__inp');
-  const arrSliderItems = document.querySelectorAll('.block_slider__slider_item');
-  
-  arrBlockControlInp.forEach(el => {
-    el.addEventListener('click', evt => {
-      deactivateSliderItems();
-      activateSliderItem(el)
-    });  
-  });
-  
-  function deactivateSliderItems () {
-    arrSliderItems.forEach(el => {
-      el.classList.remove('block_slider__slider_item--active');
+export default class Slider {
+  constructor(selectorBlockControlInp, selectorSliderItems) {
+    this.arrBlockControlInp = document.querySelectorAll(`.${selectorBlockControlInp}`);
+    this.arrSliderItems = document.querySelectorAll(`.${selectorSliderItems}`);
+    this.selectorSliderItems = selectorSliderItems;
+    this.sliserInit();    
+  }
+
+  sliserInit() {
+    this.arrBlockControlInp.forEach(el => {
+      el.addEventListener('click', evt => {
+        this.deactivateSliderItems();
+        this.activateSliderItem(el)
+      });  
     });
   }
-  
-  function activateSliderItem (it) {
-    arrSliderItems.forEach(el => {
+
+  deactivateSliderItems() {
+    this.arrSliderItems.forEach(el => {      
+      el.classList.remove(`${this.selectorSliderItems}--active`);
+    });
+  }
+
+  activateSliderItem(it) {
+    this.arrSliderItems.forEach(el => {
       if (it.checked && el.dataset.slideshow === it.dataset.slideshow) {      
-        el.classList.add('block_slider__slider_item--active');
+        el.classList.add(`${this.selectorSliderItems}--active`);
       }
     })
   }
-})()
-
+}
