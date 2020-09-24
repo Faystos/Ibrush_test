@@ -89,7 +89,7 @@ class Runner {
 
   runnerInit() {
     this.runner.addEventListener('mousedown', this.handlerMouseDown.bind(this));
-    // this.runner.addEventListener('touchstart', this.handlerTouchStart);   
+    this.runner.addEventListener('touchstart', this.handlerTouchStart.bind(this));   
   }
 
    // Обработчик события мыши
@@ -112,7 +112,28 @@ class Runner {
       document.removeEventListener('mousemove', handlerMouseMove);
       document.removeEventListener('mouseup', handlerMouseUp);
     }
-  }  
+  }
+  
+  //Обрабочик события мобильного тача.
+  handlerTouchStart(evt) {  
+    let touchObjStart = evt.changedTouches[0];
+    let startPosition = touchObjStart.clientX;
+    const calculationPos = this.calculationPos.bind(this);
+    document.addEventListener('touchmove', handlerTouchMove);
+    document.addEventListener('touchend', handlerTouchEnd);  
+  
+    function handlerTouchMove(evtTouchMove) { 
+      let touchObjMove = evtTouchMove.changedTouches[0];
+      let shift = startPosition - touchObjMove.clientX;
+      startPosition = touchObjMove.clientX;
+      calculationPos(shift);    
+    }
+  
+    function handlerTouchEnd() {   
+      document.removeEventListener('touchmove', handlerTouchMove);
+      document.removeEventListener('touchend', handlerTouchEnd);
+    }
+  }
 
   // Задаем параметры ползунку и картинке. 
   changingSliderPosition(target, valuePosition) {
